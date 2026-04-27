@@ -10,9 +10,11 @@ font-family:'Segoe UI', sans-serif;
 body{
 background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 color:white;
+scroll-behavior:smooth;
 }
 
 /* NAVBAR */
+
 nav{
 display:flex;
 justify-content:space-between;
@@ -22,12 +24,16 @@ background:rgba(0,0,0,0.4);
 position:sticky;
 top:0;
 backdrop-filter: blur(10px);
+z-index:1000;
 }
 
 .logo{
 font-size:24px;
 font-weight:bold;
 color:#00eaff;
+display:flex;
+align-items:center;
+gap:10px;
 }
 
 nav ul{
@@ -39,6 +45,7 @@ gap:25px;
 nav ul li a{
 color:white;
 text-decoration:none;
+font-weight:500;
 transition:0.3s;
 }
 
@@ -47,6 +54,7 @@ color:#00eaff;
 }
 
 /* HERO */
+
 .hero{
 height:90vh;
 display:flex;
@@ -55,23 +63,27 @@ justify-content:center;
 align-items:center;
 text-align:center;
 animation: fadeIn 2s;
+padding:20px;
 }
 
 .hero h1{
-font-size:50px;
+font-size:52px;
 color:#00eaff;
+margin-bottom:10px;
 }
 
 .hero p{
-margin-top:15px;
+margin-top:10px;
 font-size:18px;
 width:60%;
+opacity:0.9;
 }
 
 /* BOTON */
+
 .btn{
 margin-top:25px;
-padding:12px 25px;
+padding:12px 28px;
 border:none;
 background:#00eaff;
 color:black;
@@ -79,6 +91,7 @@ font-weight:bold;
 border-radius:30px;
 cursor:pointer;
 transition:0.3s;
+font-size:16px;
 }
 
 .btn:hover{
@@ -87,12 +100,21 @@ background:white;
 }
 
 /* SECCIONES */
+
 section{
 padding:60px 40px;
 text-align:center;
+animation: fadeIn 1.5s;
+}
+
+h2{
+font-size:32px;
+color:#00eaff;
+margin-bottom:20px;
 }
 
 /* CARDS */
+
 .cards{
 display:flex;
 justify-content:center;
@@ -112,7 +134,7 @@ transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-10px) scale(1.03);
 }
 
 .card i{
@@ -121,15 +143,85 @@ color:#00bcd4;
 margin-bottom:15px;
 }
 
+.card h3{
+margin-bottom:10px;
+}
+
+/* SKILLS (NUEVO) */
+
+.skills{
+max-width:600px;
+margin:auto;
+margin-top:30px;
+}
+
+.skill{
+margin-bottom:20px;
+text-align:left;
+}
+
+.skill p{
+margin-bottom:5px;
+}
+
+.barra{
+background:rgba(255,255,255,0.2);
+height:12px;
+border-radius:10px;
+overflow:hidden;
+}
+
+.progreso{
+height:100%;
+background:#00eaff;
+border-radius:10px;
+animation: cargar 2s ease;
+}
+
+.p1{
+width:85%;
+}
+
+.p2{
+width:90%;
+}
+
+.p3{
+width:80%;
+}
+
+/* REDES SOCIALES */
+
+.social{
+margin-top:10px;
+}
+
+.social i{
+font-size:22px;
+margin:8px;
+cursor:pointer;
+transition:0.3s;
+color:#00bcd4;
+}
+
+.social i:hover{
+color:#0077ff;
+transform:scale(1.2);
+}
+
 /* FOOTER */
+
 footer{
 background:black;
 padding:20px;
 text-align:center;
 margin-top:40px;
+font-size:14px;
+opacity:0.8;
 }
 
-/* ANIMACION */
+/* ANIMACIONES */
+
 @keyframes fadeIn{
 
 from{
@@ -140,6 +232,50 @@ transform:translateY(40px);
 to{
 opacity:1;
 transform:translateY(0);
+}
+
+}
+
+@keyframes cargar{
+
+from{
+width:0;
+}
+
+}
+
+/* RESPONSIVE (MUY IMPORTANTE) */
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+width:90%;
+}
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
+@media(max-width:500px){
+
+.hero h1{
+font-size:32px;
+}
+
+.card{
+width:90%;
 }
 
 }
